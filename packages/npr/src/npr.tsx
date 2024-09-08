@@ -1,4 +1,4 @@
-import { type PropsWithChildren, useMemo } from 'react';
+import { type PropsWithChildren } from 'react';
 import useImageSize from './imgsize';
 
 type NinePatchProps = {

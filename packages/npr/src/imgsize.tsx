@@ -11,9 +11,9 @@ export default function useImageSize(src: string): ImageSize | null {
     useEffect(() => {
         const img = new Image();
         img.src = src;
-        img.onload = () => {
-            setSize({ width: img.width, height: img.height });
-        };
+        img.decode().then(() => {
+            setSize({ width: img.naturalWidth, height: img.naturalHeight });
+        });
     }, [src]);
 
     return size;

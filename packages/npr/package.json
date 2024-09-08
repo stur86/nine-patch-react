@@ -2,10 +2,16 @@
   "name": "nine-patch-react",
   "module": "index.ts",
   "devDependencies": {
+    "@happy-dom/global-registrator": "^15.7.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@testing-library/dom": "^10.4.0"
+  }
 }
