@@ -1,3 +1,3 @@
-const NPR_MESSAGE = 'Still not ready for production';
+import NinePatch from "./src/npr";
 
-export default NPR_MESSAGE;
+export default NinePatch;
