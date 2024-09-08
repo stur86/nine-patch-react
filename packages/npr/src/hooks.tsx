@@ -5,6 +5,12 @@ type Size = {
     height: number;
 };
 
+/**
+ * A hook that returns the size of an image given its URL.
+ * 
+ * @param src The URL of the image
+ * @returns 
+ */
 export function useImageSize(src: string): Size | null {
     const [size, setSize] = useState<Size | null>(null);
 
@@ -19,6 +25,12 @@ export function useImageSize(src: string): Size | null {
     return size;
 }
 
+/**
+ * A hook that returns the size of an element given its ref.
+ * 
+ * @param ref The ref of the element
+ * @returns 
+ */
 export function useElementSize(ref: React.RefObject<HTMLElement>): Size | null {
     const [size, setSize] = useState<Size | null>(null);
     const obsRef = useRef<ResizeObserver>(new ResizeObserver(updateSize));
