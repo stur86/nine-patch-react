@@ -47,6 +47,14 @@ export class BorderCalculator {
     get bottom(): number {
         return calcReferencedSize(this._border.bottom, this._ref.height);
     }
+    
+    get width(): number {
+        return this.left+this.right;
+    }
+
+    get height(): number {
+        return this.top+this.bottom;
+    }
 };
 
 export class GridStyleCalculator {
@@ -70,9 +78,32 @@ export class GridStyleCalculator {
     }
 
     getCellStyle(row: number, col: number): Record<string, string> {
+
+        const bPosV = ['top', 'center', 'bottom'][row];
+        const bPosH = ['left', 'center', 'right'][col];
+
+        let bSizeH = `${this._imgSize.width}px`;
+        let bSizeV = `${this._imgSize.height}px`;
+
+        // Size must be adjusted for non-corner cells
+        if (row === 1) {
+            const targH = this._divSize.height-this._border.height;
+            const baseH = this._imgSize.height-this._border.height;
+            bSizeV = `${this._imgSize.height*targH/baseH}px`
+        }
+
+        if (col === 1) {
+            const targW = this._divSize.width-this._border.width;
+            const baseW = this._imgSize.width-this._border.width;
+            bSizeH = `${this._imgSize.width*targW/baseW}px`
+        }
+
         const cStyle = {
+            backgroundRepeat: 'no-repeat',
             gridRow: `${row+1} / ${row+2}`,
-            gridColumn: `${col+1} / ${col+2}`
+            gridColumn: `${col+1} / ${col+2}`,
+            backgroundPosition: `${bPosH} ${bPosV}`,
+            backgroundSize: `${bSizeH} ${bSizeV}`
         };
 
         return cStyle;
