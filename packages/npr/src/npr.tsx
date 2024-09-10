@@ -1,5 +1,6 @@
 import { type PropsWithChildren, useRef } from 'react';
 import { useImageSize, useElementSize } from './hooks';
+import { GridStyleCalculator } from './calc';
 
 type NinePatchProps = {
     src: string;
@@ -22,14 +23,31 @@ export default function NinePatch({
 
     const imgSize = useImageSize(src);
     const divSize = useElementSize(divRef);
+    
+    let styleCalc = null;
+    if (
+        imgSize !== null &&
+        divSize !== null
+    ) {
+        styleCalc = new GridStyleCalculator(imgSize, divSize, {
+            left: borderLeft,
+            right: borderRight,
+            top: borderTop,
+            bottom: borderBottom
+        });
+    }
+    
 
-    var w = (imgSize?.width || 0)*2;
-    var h = (imgSize?.height || 0)*2;
-
-    return <div ref={divRef} style={{width: w, height: h, backgroundColor: '#ff0000', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <img src={src}></img>
-        <p>
-            {divSize?.width}x{divSize?.height}
-        </p>
+    return <div className='npr-grid-rect' ref={divRef} style={styleCalc?.gridStyle}>
+        {
+            [0, 1, 2].map(x => {
+                return [0, 1, 2].map(y => {
+                    return <div className='npr-grid-cell' key={`${x}-${y}`}
+                    style={{backgroundImage: `url(${src})`, ...styleCalc?.getCellStyle(x, y)}}>
+                        {(x === 1 && y === 1) ? children : null}
+                    </div>;
+                });
+            })
+        }
     </div>;
 }

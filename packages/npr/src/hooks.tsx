@@ -1,9 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-
-type Size = {
-    width: number;
-    height: number;
-};
+import { type Size } from './types';
 
 /**
  * A hook that returns the size of an image given its URL.
