@@ -27,7 +27,8 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <NinePatch src={cobaltUrl}>
+      <NinePatch src={cobaltUrl} scale={3} borderLeft='10px' borderRight='10px' borderBottom='10px' borderTop='10px'
+        pixelPerfect={true}>
         Hello world!
       </NinePatch>
     </>

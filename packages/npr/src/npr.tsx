@@ -8,15 +8,19 @@ type NinePatchProps = {
     borderRight?: string;
     borderTop?: string;
     borderBottom?: string;
+    scale?: number;
+    pixelPerfect?: boolean;
 }
 
 export default function NinePatch({
     children,
     src,
+    scale = 1,
     borderLeft = '33%',
     borderRight = '33%',
     borderTop = '33%',
-    borderBottom = '33%'
+    borderBottom = '33%',
+    pixelPerfect = false
 }: PropsWithChildren<NinePatchProps>) {
 
     const divRef = useRef<HTMLDivElement>(null);
@@ -34,11 +38,17 @@ export default function NinePatch({
             right: borderRight,
             top: borderTop,
             bottom: borderBottom
-        });
+        }, scale);
+    }
+
+    const contStyle = {...styleCalc?.gridStyle};
+    // Pixel perfect scaling
+    if (pixelPerfect) {
+        contStyle["image-rendering"] = "pixelated";
     }
     
 
-    return <div className='npr-grid-rect' ref={divRef} style={styleCalc?.gridStyle}>
+    return <div className='npr-grid-rect' ref={divRef} style={contStyle}>
         {
             [0, 1, 2].map(x => {
                 return [0, 1, 2].map(y => {

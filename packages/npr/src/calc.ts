@@ -62,18 +62,20 @@ export class GridStyleCalculator {
     _imgSize: Size;
     _divSize: Size;
     _border: BorderCalculator;
+    _scale: number;
 
-    constructor(imgSize: Size, divSize: Size, border: Border) {
+    constructor(imgSize: Size, divSize: Size, border: Border, scale: number = 1.0) {
         this._imgSize = imgSize;
         this._divSize = divSize;
         this._border = new BorderCalculator(border, imgSize);
+        this._scale = scale;
     }
 
     get gridStyle(): Record<string, string> {
         return {
             display: 'grid',
-            gridTemplateColumns: `${this._border.left}px auto ${this._border.right}px`,
-            gridTemplateRows: `${this._border.top}px auto ${this._border.bottom}px`
+            gridTemplateColumns: `${this._border.left*this._scale}px auto ${this._border.right*this._scale}px`,
+            gridTemplateRows: `${this._border.top*this._scale}px auto ${this._border.bottom*this._scale}px`
         };
     }
 
@@ -82,8 +84,8 @@ export class GridStyleCalculator {
         const bPosV = ['top', 'center', 'bottom'][row];
         const bPosH = ['left', 'center', 'right'][col];
 
-        let bSizeH = `${this._imgSize.width}px`;
-        let bSizeV = `${this._imgSize.height}px`;
+        let bSizeH = `${this._imgSize.width*this._scale}px`;
+        let bSizeV = `${this._imgSize.height*this._scale}px`;
 
         // Size must be adjusted for non-corner cells
         if (row === 1) {
