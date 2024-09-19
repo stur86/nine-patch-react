@@ -2,15 +2,11 @@ import { expect, test } from "bun:test";
 import { useImageSize, useElementSize } from "./hooks";
 import { render, waitFor } from "@testing-library/react";
 import { useRef } from "react";
-
-// A test image URI of size 20x10
-const testUrl =
-  ("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAMAAACDi47UAAAACVBMVEX/AAAA/9H///+eHtrpAAAAHklEQVR4" +
-   "nGNgAAJGJMAAA8QJghhMSAAsQaEgZU4CAFLaAMneKosGAAAAHXRFWHRTb2Z0d2FyZQBAbHVuYXBhaW50L3BuZy1jb2RlY/VDGR4AAAAASUVORK5CYII=");
+import { testFrameURI } from "./test_data";
 
 test("useImageSize", async () => {
   function TestComponent() {
-    const imgSize = useImageSize(testUrl);
+    const imgSize = useImageSize(testFrameURI);
     return (
       <div>
         {imgSize?.width}x{imgSize?.height}
