@@ -2,10 +2,13 @@
   "name": "nine-patch-react",
   "module": "index.ts",
   "devDependencies": {
+    "@eslint/js": "^9.11.1",
     "@happy-dom/global-registrator": "^15.7.3",
     "@testing-library/react": "^16.0.1",
     "@testing-library/react-hooks": "^8.0.1",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/eslint__js": "^8.42.3",
+    "typescript-eslint": "^8.7.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -13,5 +16,8 @@
   "type": "module",
   "dependencies": {
     "@testing-library/dom": "^10.4.0"
+  },
+  "scripts": {
+    "lint": "eslint . --fix"
   }
 }

@@ -3,7 +3,6 @@ import NinePatch from "./npr";
 import { type NinePatchProps } from "./npr";
 import { render, waitFor } from "@testing-library/react";
 import { testFrameURI } from "./test_data";
-import { GridStyleCalculator } from "./calc";
 
 describe("NinePatch", () => {
     function TestComponent(props: NinePatchProps) {

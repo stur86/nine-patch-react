@@ -1,8 +1,7 @@
-import { expect, describe, it, mock, spyOn } from "bun:test";
+import { expect, describe, it, spyOn } from "bun:test";
 import { useImageSize, useElementSize } from "./hooks";
-import { render, waitFor } from "@testing-library/react";
-import { useRef, type RefObject } from "react";
-import { testFrameURI } from "./test_data";
+import { waitFor } from "@testing-library/react";
+import { type RefObject } from "react";
 import { renderHook } from '@testing-library/react';
 
 describe("useElementSize", () => {
@@ -47,7 +46,7 @@ describe("useImageSize", () => {
       }
     }
 
-    // @ts-ignore
+    // @ts-expect-error   Mock class does not implement the full Image interface
     spyOn(window, 'Image').mockImplementation(() => new MockImage());
 
     let { result } = renderHook(() => useImageSize('20x10'));
