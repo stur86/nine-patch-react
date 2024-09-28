@@ -24,13 +24,6 @@ describe("NinePatch", () => {
             borderRight="5px"
         />);
 
-        const gcalc = new GridStyleCalculator({width: 20, height: 10}, {width: 100, height: 100}, {
-            left: "5px",
-            right: "5px",
-            top: "5px",
-            bottom: "5px"
-        }, 1);
-        
         // Retrieve the div element
         const div = container.querySelector(".npr-grid-rect") as HTMLDivElement;
         expect(div).not.toBeNull();
@@ -53,10 +46,6 @@ describe("NinePatch", () => {
                     expect(child.innerHTML).toBe("");
                 }
             }
-        });
-
-        // Now wait for the element to resize
-        waitFor(() => {
         });
     });
 });
