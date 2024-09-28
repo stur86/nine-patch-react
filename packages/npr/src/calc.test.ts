@@ -35,6 +35,22 @@ describe("BorderCalculator", () => {
         expect(border.width).toBe(30);
         expect(border.height).toBe(140);
     });
+
+    it("should work with pixel sizes", () => {
+        const border = new BorderCalculator({
+            left: "10px",
+            right: "20px",
+            top: "30px",
+            bottom: "40px"
+        }, {width: 100, height: 200});
+
+        expect(border.left).toBe(10);
+        expect(border.right).toBe(20);
+        expect(border.top).toBe(30);
+        expect(border.bottom).toBe(40);
+        expect(border.width).toBe(30);
+        expect(border.height).toBe(70);
+    });
 });
 
 describe("GridStyleCalculator", () => {
