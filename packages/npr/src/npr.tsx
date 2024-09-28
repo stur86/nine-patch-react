@@ -44,7 +44,7 @@ export default function NinePatch({
     const contStyle = {...styleCalc?.gridStyle};
     // Pixel perfect scaling
     if (pixelPerfect) {
-        contStyle["image-rendering"] = "pixelated";
+        contStyle.imageRendering = "pixelated";
     }
     
 

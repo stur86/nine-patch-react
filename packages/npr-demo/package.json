@@ -10,9 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@types/prismjs": "^1.26.4",
+    "nine-patch-react": "workspace:*",
+    "prism-react-renderer": "^2.4.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "nine-patch-react": "workspace:*"
+    "react-code-block": "^1.0.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -23,6 +28,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "prettier": "^3.3.3",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }
