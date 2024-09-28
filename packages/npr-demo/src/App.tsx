@@ -1,8 +1,9 @@
 import "./App.css";
 import NinePatch from "nine-patch-react/src/npr";
 import cobaltUrl from "./assets/cobalt.png";
-// import copperUrl from "./assets/copper.png";
-// import goldBlueUrl from "./assets/gold_and_blue.png";
+import copperUrl from "./assets/copper.png";
+import grailUrl from "./assets/grail.png";
+import goldBlueUrl from "./assets/gold_and_blue.png";
 import bubblegumUrl from "./assets/bubblegum.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import exampleStrip from "./assets/NinePatchExample.svg";
@@ -85,6 +86,7 @@ function App() {
             <li><a href="#how-it-works">How it works</a></li>
             <li><a href="#installation">Installation and usage</a></li>
             <li><a href="#showcase">Showcase</a></li>
+            <li><a href="#properties">Properties</a></li>
           </ol>
         </div>
         <div className="section" id="how-it-works">
@@ -157,9 +159,89 @@ function App() {
               <span className="cute-text">Hello, world!</span>
             </NinePatch>
           </TSXCompareBlock>
-          
+
+          You can put more than just basic text inside a frame, of course. Here's an example with an image:
+
+          <TSXCompareBlock title="Grail box">
+            <div style={{width: "300px", height: "300px"}}>
+              <NinePatch src={copperUrl} scale={2} pixelPerfect={true}>
+                <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+                  <img src={grailUrl} alt="The Holy Grail" style={{height: "128px"}} />
+                </div>
+              </NinePatch>
+            </div>
+          </TSXCompareBlock>
+
+          Or some code
+
+          <TSXCompareBlock title="Code box">
+            <NinePatch src={goldBlueUrl} scale={2} pixelPerfect={true}>
+              <pre style={{backgroundColor: 'rgba(0, 10, 30, 0.6)'}}>
+                console.log("Hello, world!");
+              </pre>
+            </NinePatch>
+          </TSXCompareBlock>
+        </div>
+        <div className="section" id="properties">
+          <h1 className="title">Properties</h1>
+          <table id="properties-table" className="table is-bordered is-striped is-narrow is-hoverable">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>src</code></td>
+                <td>string</td>
+                <td>Path to the image to use as a frame.</td>
+              </tr>
+              <tr>
+                <td><code>scale</code></td>
+                <td>number (Optional)</td>
+                <td>Scale factor for the image. Default is 1.</td>
+              </tr>
+              <tr>
+                <td><code>pixelPerfect</code></td>
+                <td>boolean (Optional)</td>
+                <td>Whether to use pixel-perfect scaling. Default is false.</td>
+              </tr>
+              <tr>
+                <td><code>borderTop</code></td>
+                <td>string (Optional)</td>
+                <td>Size of the top border. Can be in pixels or percentage. Default is 33%.</td>
+              </tr>
+              <tr>
+                <td><code>borderRight</code></td>
+                <td>string (Optional)</td>
+                <td>Size of the right border. Can be in pixels or percentage. Default is 33%.</td>
+              </tr>
+              <tr>
+                <td><code>borderBottom</code></td>
+                <td>string (Optional)</td>
+                <td>Size of the bottom border. Can be in pixels or percentage. Default is 33%.</td>
+              </tr>
+              <tr>
+                <td><code>borderLeft</code></td>
+                <td>string (Optional)</td>
+                <td>Size of the left border. Can be in pixels or percentage. Default is 33%.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      <footer className="footer">
+        <div className="content has-text-centered">
+          <p>
+            <strong>Nine Patch React</strong> by <a href="https://github.com/stur86">Simone Sturniolo</a>
+          </p>
+          <p>
+            <strong>Made with <a href="https://react.dev/">React</a> and <a href="https://bun.sh/">Bun</a>.</strong>
+          </p>
+          </div>
+        </footer>
     </>
   );
 }

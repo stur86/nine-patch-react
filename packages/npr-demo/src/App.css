@@ -40,3 +40,7 @@ pre .tag {
   text-align: center;
   color: #ff336b;
 }
+
+#properties-table td, #properties-table th {
+  padding: 0.5em 2em;
+}
