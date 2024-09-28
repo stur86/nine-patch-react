@@ -1,5 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Jersey+25&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 #hero-title {
   font-size: 4em;
@@ -21,4 +22,21 @@ pre .tag {
   border-radius: 0;
   line-height: normal;
   white-space: pre-wrap;
+}
+
+.pixel-text {
+  font-size: 1.5em;
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.cute-text {
+  font-size: 2em;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #ff336b;
 }

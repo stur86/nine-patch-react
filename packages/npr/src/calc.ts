@@ -89,13 +89,16 @@ export class GridStyleCalculator {
 
         // Size must be adjusted for non-corner cells
         if (row === 1) {
-            const targH = this._divSize.height-this._border.height;
+            const targH = this._divSize.height-this._border.height*this._scale;
             const baseH = this._imgSize.height-this._border.height;
             bSizeV = `${this._imgSize.height*targH/baseH}px`
+            if (targH/baseH < 0) {
+                console.log(this._divSize.height, this._border.height, this._imgSize.height);
+            }
         }
 
         if (col === 1) {
-            const targW = this._divSize.width-this._border.width;
+            const targW = this._divSize.width-this._border.width*this._scale;
             const baseW = this._imgSize.width-this._border.width;
             bSizeH = `${this._imgSize.width*targW/baseW}px`
         }

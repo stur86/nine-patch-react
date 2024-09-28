@@ -27,7 +27,7 @@ export default function NinePatch({
 
     const imgSize = useImageSize(src);
     const divSize = useElementSize(divRef);
-    
+
     let styleCalc = null;
     if (
         imgSize !== null &&
@@ -39,7 +39,7 @@ export default function NinePatch({
             top: borderTop,
             bottom: borderBottom
         }, scale);
-    }
+    }    
 
     const contStyle = {...styleCalc?.gridStyle};
     // Pixel perfect scaling

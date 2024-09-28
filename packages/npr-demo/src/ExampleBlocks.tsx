@@ -1,6 +1,7 @@
 import { CodeBlock } from "react-code-block";
 import "./ExampleBlocks.css";
-import { useState } from "react";
+import { useState, PropsWithChildren } from "react";
+import reactElementToJSXString from "react-element-to-jsx-string";
 
 type TSXBlockProps = {
   title: string;
@@ -38,6 +39,21 @@ export function TSXBlock({ code, title }: TSXBlockProps) {
             </CodeBlock>
         </div>
     );
+}
+
+type TSXCompareBlockProps = {
+    title: string;
+};
+
+export function TSXCompareBlock({ title, children }: PropsWithChildren<TSXCompareBlockProps>) {
+    const code = reactElementToJSXString(children, { maxInlineAttributesLineLength: 100, showDefaultProps: false });
+
+    return (
+        <div className="mt-5 mb-5">
+            {children}
+            <TSXBlock code={code} title={title} />
+        </div>
+    )
 }
 
 type BashBlockProps = {
