@@ -3,7 +3,7 @@ import NinePatch from "nine-patch-react/src/npr";
 import cobaltUrl from "./assets/cobalt.png";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import exampleStrip from "./assets/NinePatchExample.svg";
-import { TSXBlock } from "./ExampleBlocks";
+import { TSXBlock, BashBlock } from "./ExampleBlocks";
 
 const basicExampleCode = `
 import NinePatch from "nine-patch-react/src/npr";
@@ -86,11 +86,9 @@ function App() {
         <div className="section">
           <h1 className="title">Installation and usage</h1>
           To install simply run the following command in your project directory:
-          {/* <CodeBlock language='bash' code={"npm install --save nine-patch-react"} /> */}
-          or if you're using <a href="https://bun.sh/">Bun</a>:
-          {/* <CodeBlock language='bash' code={"bun add nine-patch-react"} /> */}
+          <BashBlock allCodes={{ npm: "npm install --save nine-patch-react", bun: "bun add nine-patch-react", yarn: "yarn add nine-patch-react" }} />
           And you can use it simply like this:
-          <TSXBlock code={basicExampleCode} />
+          <TSXBlock title="simple.tsx" code={basicExampleCode} />
         </div>
       </div>
     </>
