@@ -2,7 +2,7 @@ import { type PropsWithChildren, useRef } from 'react';
 import { useImageSize, useElementSize } from './hooks';
 import { GridStyleCalculator } from './calc';
 
-type NinePatchProps = {
+export type NinePatchProps = {
     src: string;
     borderLeft?: string;
     borderRight?: string;
