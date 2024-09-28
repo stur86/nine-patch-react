@@ -15,6 +15,7 @@ import NinePatch from "nine-patch-react/src/npr";
 </NinePatch>`;
 
 function App() {
+
   return (
     <>
       <nav className="navbar is-warning">
@@ -54,13 +55,20 @@ function App() {
       </section>
       <div className="container">
         <div className="section">
-          Nine Patch React provides a simple React component,{" "}
-          <code>&lt;NinePatch&gt;</code>, that you can use to put any content
-          inside a box rendered from an image using the "nine-patch" technique.
-          This technique allows you to create a scalable box with unique borders
-          and corners from a base image.
+          <p className="mb-5">
+            Nine Patch React provides a simple React component,{" "}
+            <code>&lt;NinePatch&gt;</code>, that you can use to put any content
+            inside a box rendered from an image using the "nine-patch" technique.
+            This technique allows you to create a scalable box with unique borders
+            and corners from a base image.
+          </p>
+          <h2 className="subtitle">Contents</h2>
+          <ol>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#installation">Installation and usage</a></li>
+          </ol>
         </div>
-        <div className="section">
+        <div className="section" id="how-it-works">
           <h1 className="title">How it works</h1>
           Nine Patch React provides a simple React component,{" "}
           <code>&lt;NinePatch&gt;</code>, that you can use to put any content
@@ -83,12 +91,14 @@ function App() {
           </a>
           .
         </div>
-        <div className="section">
+        <div className="section" id="installation">
           <h1 className="title">Installation and usage</h1>
           To install simply run the following command in your project directory:
           <BashBlock allCodes={{ npm: "npm install --save nine-patch-react", bun: "bun add nine-patch-react", yarn: "yarn add nine-patch-react" }} />
           And you can use it simply like this:
           <TSXBlock title="simple.tsx" code={basicExampleCode} />
+        </div>
+        <div className="section" id="showcase">
         </div>
       </div>
     </>
