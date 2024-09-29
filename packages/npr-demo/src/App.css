@@ -44,3 +44,7 @@ pre .tag {
 #properties-table td, #properties-table th {
   padding: 0.5em 2em;
 }
+
+.h-100 {
+  height: 100%;
+}

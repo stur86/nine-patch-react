@@ -53,7 +53,7 @@ function App() {
         </div>
         <div className="navbar-end is-inline-block">
           <a
-            className="navbar-item"
+            className="navbar-item h-100"
             href="https://github.com/stur86/nine-patch-react"
           >
             <span className="is-hidden-touch">Fork me on GitHub</span>
