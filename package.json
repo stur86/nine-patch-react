@@ -10,5 +10,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "publish-page": "cd packages/npr-demo && bun run build && bun run gh-pages -d ./dist"
   }
 }

@@ -1,5 +1,5 @@
 import "./App.css";
-import NinePatch from "nine-patch-react/src/npr";
+import NinePatch from "nine-patch-react";
 import cobaltUrl from "./assets/cobalt.png";
 import copperUrl from "./assets/copper.png";
 import grailUrl from "./assets/grail.png";
@@ -9,8 +9,16 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import exampleStrip from "./assets/NinePatchExample.svg";
 import { TSXBlock, BashBlock, TSXCompareBlock } from "./ExampleBlocks";
 
+const packageName = "@stur86/nine-patch-react";
+
+const installCodes = {
+  npm: `npm install --save ${packageName}`,
+  bun: `bun add ${packageName}`,
+  yarn: `yarn add ${packageName}`
+};
+
 const basicExampleCode = `
-import NinePatch from "nine-patch-react/src/npr";
+import NinePatch from "${packageName}";
 
 ...
 
@@ -106,7 +114,7 @@ function App() {
         <div className="section" id="installation">
           <h1 className="title">Installation and usage</h1>
           To install simply run the following command in your project directory:
-          <BashBlock allCodes={{ npm: "npm install --save nine-patch-react", bun: "bun add nine-patch-react", yarn: "yarn add nine-patch-react" }} />
+          <BashBlock allCodes={installCodes} />
           And you can use it simply like this:
           <TSXBlock title="simple.tsx" code={basicExampleCode} />
         </div>
@@ -235,10 +243,11 @@ function App() {
       <footer className="footer">
         <div className="content has-text-centered">
           <p>
-            <strong>Nine Patch React</strong> by <a href="https://github.com/stur86">Simone Sturniolo</a>
+            <strong>Nine Patch React</strong> - Copyright &copy; 2024 <a href="https://github.com/stur86">Simone Sturniolo</a>
           </p>
+          <p>Open source under the <a href="https://raw.githubusercontent.com/stur86/nine-patch-react/refs/heads/main/LICENSE">MIT License</a></p>
           <p>
-            <strong>Made with <a href="https://react.dev/">React</a> and <a href="https://bun.sh/">Bun</a>.</strong>
+            <strong>Made with <a href="https://react.dev/">React</a> and <a href="https://bun.sh/">Bun</a></strong>
           </p>
           </div>
         </footer>
