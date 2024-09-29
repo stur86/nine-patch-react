@@ -1,5 +1,5 @@
 import "./App.css";
-import NinePatch from "nine-patch-react";
+import NinePatch from "@stur86/nine-patch-react";
 import cobaltUrl from "./assets/cobalt.png";
 import copperUrl from "./assets/copper.png";
 import grailUrl from "./assets/grail.png";
