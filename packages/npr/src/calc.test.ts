@@ -140,7 +140,7 @@ describe("GridStyleCalculator", () => {
     it("should deal with scaling", () => {
         const grid = new GridStyleCalculator(
             {width: 100, height: 200}, 
-            {width: 240, height: 320}, 
+            {width: 255, height: 330}, 
             {
                 left: "10%",
                 right: "20%",
@@ -168,7 +168,7 @@ describe("GridStyleCalculator", () => {
             gridRow: "2 / 3",
             gridColumn: "1 / 2",
             backgroundPosition: "left center",
-            backgroundSize: "150px 600px"
+            backgroundSize: "150px 400px"
         });
         // Other side
         expect(grid.getCellStyle(0, 1)).toEqual({
@@ -184,7 +184,7 @@ describe("GridStyleCalculator", () => {
             gridRow: "2 / 3",
             gridColumn: "2 / 3",
             backgroundPosition: "center center",
-            backgroundSize: "300px 600px"
+            backgroundSize: "300px 400px"
         });
     });
 });
