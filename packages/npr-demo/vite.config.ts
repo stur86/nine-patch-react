@@ -5,4 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './',
+  esbuild: {
+    minifyIdentifiers: false
+  },
+  build: {
+    minify: "esbuild"
+  }
 })
